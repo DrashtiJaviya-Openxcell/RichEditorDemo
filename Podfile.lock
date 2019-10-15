@@ -1,0 +1,21 @@
+PODS:
+  - RichEditorView (4.0)
+
+DEPENDENCIES:
+  - RichEditorView (from `https://github.com/cbess/RichEditorView`)
+
+EXTERNAL SOURCES:
+  RichEditorView:
+    :git: https://github.com/cbess/RichEditorView
+
+CHECKOUT OPTIONS:
+  RichEditorView:
+    :commit: 99126468f06c6d6a3a7ce97702338786ffe167ed
+    :git: https://github.com/cbess/RichEditorView
+
+SPEC CHECKSUMS:
+  RichEditorView: bfd51ac5faf49f2d4d98b650947380fd486a86ae
+
+PODFILE CHECKSUM: fb3105cdd69aeb84d771692784461cb8df0c6241
+
+COCOAPODS: 1.8.3

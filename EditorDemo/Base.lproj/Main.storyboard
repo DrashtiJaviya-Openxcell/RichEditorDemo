@@ -1,24 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IWm-ju-UX4">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="xNX-h5-aHp">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <navigationController id="IWm-ju-UX4" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kH9-tS-EGn">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="WGy-Ck-g9F" kind="relationship" relationship="rootViewController" id="yqW-Wf-oHq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="49A-za-hc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-740" y="433"/>
+        </scene>
+        <!--RichEditorView Swift-->
+        <scene sceneID="qSG-lz-73d">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="WGy-Ck-g9F" userLabel="RichEditorView Swift" customClass="ViewController" customModule="EditorDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8ZG-rq-dcH"/>
+                        <viewControllerLayoutGuide type="bottom" id="gMY-g1-owp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5nC-vF-dVG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fO6-zX-HDn" customClass="RichEditorView" customModule="RichEditorView">
+                                <rect key="frame" x="8" y="64" width="359" height="259"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="259" id="HwM-ka-Dcf"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="HTML Preview" translatesAutoresizingMaskIntoConstraints="NO" id="npp-6n-kzb">
+                                <rect key="frame" x="0.0" y="325" width="375" height="342"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="npp-6n-kzb" firstAttribute="leading" secondItem="5nC-vF-dVG" secondAttribute="leading" id="6RD-s2-u73"/>
+                            <constraint firstItem="gMY-g1-owp" firstAttribute="top" secondItem="npp-6n-kzb" secondAttribute="bottom" id="KMl-4Z-1Nl"/>
+                            <constraint firstAttribute="trailing" secondItem="npp-6n-kzb" secondAttribute="trailing" id="OqD-aI-pzq"/>
+                            <constraint firstItem="npp-6n-kzb" firstAttribute="top" secondItem="fO6-zX-HDn" secondAttribute="bottom" constant="2" id="T1X-XP-uHS"/>
+                            <constraint firstItem="fO6-zX-HDn" firstAttribute="leading" secondItem="5nC-vF-dVG" secondAttribute="leading" constant="8" id="YsV-Lh-BMj"/>
+                            <constraint firstItem="fO6-zX-HDn" firstAttribute="top" secondItem="8ZG-rq-dcH" secondAttribute="bottom" id="bha-8v-TMp"/>
+                            <constraint firstAttribute="trailing" secondItem="fO6-zX-HDn" secondAttribute="trailing" constant="8" id="sDd-Kr-O03"/>
+                            <constraint firstItem="npp-6n-kzb" firstAttribute="top" secondItem="fO6-zX-HDn" secondAttribute="bottom" constant="2" id="yzx-JS-G1g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XhU-Qz-7rX"/>
                     </view>
+                    <navigationItem key="navigationItem" title="RichEditorView - Swift" id="rcF-Oi-gfh"/>
+                    <connections>
+                        <outlet property="editorView" destination="fO6-zX-HDn" id="daG-2A-xnc"/>
+                        <outlet property="htmlTextView" destination="npp-6n-kzb" id="unA-Xo-BWm"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YbK-gu-5pS" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="415" y="432"/>
         </scene>
     </scenes>
 </document>
